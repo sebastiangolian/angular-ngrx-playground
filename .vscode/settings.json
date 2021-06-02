@@ -1,0 +1,18 @@
+{
+  "files.exclude": {
+    "node_modules": true,
+    ".browserslistrc": true,
+    ".editorconfig": true,
+    ".gitignore": true,
+    "karma.conf.js": true,
+    "README.md": true,
+    "tsconfig.app.json": true,
+    "tsconfig.json": true,
+    "tsconfig.spec.json": true,
+    "src\\favicon.ico": true,
+    "src\\main.ts": true,
+    "src\\polyfills.ts": true,
+    "src\\test.ts": true,
+    "src\\assets": true
+  }
+}
