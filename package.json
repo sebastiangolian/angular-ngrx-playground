@@ -7,7 +7,8 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "test:headless": "ng test --browsers ChromeHeadless"
+    "test:headless": "ng test --browsers ChromeHeadless",
+    "clear": "rmdir /q /s node_modules"
   },
   "private": true,
   "dependencies": {
@@ -22,12 +23,13 @@
     "@ngrx/effects": "^12.0.0",
     "@ngrx/entity": "^12.0.0",
     "@ngrx/store": "^12.0.0",
+    "@ngrx/store-devtools": "^12.0.0",
     "rxjs": "~6.6.0",
     "tslib": "^2.1.0",
     "zone.js": "~0.11.4"
   },
   "devDependencies": {
-    "@angular-devkit/build-angular": "^0.1102.13",
+    "@angular-devkit/build-angular": "~12.0.1",
     "@angular/cli": "~12.0.0",
     "@angular/compiler-cli": "~12.0.0",
     "@ngrx/schematics": "^12.0.0",

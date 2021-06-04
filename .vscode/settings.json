@@ -14,5 +14,10 @@
     "src\\polyfills.ts": true,
     "src\\test.ts": true,
     "src\\assets": true
+  },
+  "[typescript]": {
+    "editor.codeActionsOnSave": {
+      "source.organizeImports": true
+    }
   }
 }
