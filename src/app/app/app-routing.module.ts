@@ -12,6 +12,7 @@ const routes: Routes = [
     loadChildren: () =>
       import('../counter/counter.module').then((m) => m.CounterModule),
   },
+  { path: 'todo-new', loadChildren: () => import('../todo-new/todo-new.module').then(m => m.TodoNewModule) },
   //{ path: 'books', loadChildren: () => import('../books/books.module').then(m => m.BooksModule) },
 ];
 
