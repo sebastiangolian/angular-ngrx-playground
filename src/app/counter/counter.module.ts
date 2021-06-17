@@ -11,7 +11,7 @@ import { counterReducer } from './store/counter.reducer';
     //imports
     CommonModule,
     CounterRoutingModule,
-    StoreModule.forFeature('counter', counterReducer),
+    StoreModule.forFeature('counterValue', counterReducer),
   ],
 })
 export class CounterModule {}

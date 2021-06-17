@@ -18,7 +18,7 @@ export class CounterComponent {
   count$: Observable<number> = new Observable();
 
   constructor(private store: Store<Counter>) {
-    this.count$ = store.select('count');
+    this.count$ = store.select('counterValue');
   }
 
   increment() {

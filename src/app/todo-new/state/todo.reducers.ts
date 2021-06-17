@@ -20,7 +20,7 @@ const todoDefaultState: TodoState = {
 export const initialState: TodoState =
   todoAdapter.getInitialState(todoDefaultState);
 
-const _counterReducer = createReducer(
+const _todoReducer = createReducer(
   initialState,
   //on(add, (state) => state + 1),
   on(add, (state, { todo }) => ({ ...state }))
@@ -29,9 +29,6 @@ const _counterReducer = createReducer(
   //   on(reset, (state) => 0)
 );
 
-export function counterReducer(
-  state: TodoState = initialState,
-  action: Action
-) {
-  return _counterReducer(state, action);
+export function todoReducer(state: TodoState = initialState, action: Action) {
+  return _todoReducer(state, action);
 }
