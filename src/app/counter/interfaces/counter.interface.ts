@@ -1,3 +1,3 @@
 export interface Counter {
-  counterValue: number;
+  count: number;
 }

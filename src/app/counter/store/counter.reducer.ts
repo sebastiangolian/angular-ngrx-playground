@@ -1,16 +1,17 @@
 import { Action, createReducer, on } from '@ngrx/store';
-import { decrement, increment, reset, setTen } from './counter.actions';
+import * as CounterActions from './counter.actions';
 
+export const key = 'count';
 export const initialState = 0;
 
-const _counterReducer = createReducer(
+const counterReducer = createReducer(
   initialState,
-  on(increment, (state) => state + 1),
-  on(decrement, (state) => state - 1),
-  on(setTen, (state) => 10),
-  on(reset, (state) => 0)
+  on(CounterActions.increment, (state) => state + 1),
+  on(CounterActions.decrement, (state) => state - 1),
+  on(CounterActions.setTen, (state) => 10),
+  on(CounterActions.reset, (state) => initialState)
 );
 
-export function counterReducer(state: number, action: Action) {
-  return _counterReducer(state, action);
+export function reducer(state: number, action: Action) {
+  return counterReducer(state, action);
 }

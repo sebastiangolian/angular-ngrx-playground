@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 import { StoreModule } from '@ngrx/store';
 import { CounterRoutingModule } from './counter-routing.module';
 import { CounterComponent } from './pages/counter/counter.component';
-import { counterReducer } from './store/counter.reducer';
+import * as CounterReducer from './store/counter.reducer';
 
 @NgModule({
   declarations: [CounterComponent],
@@ -11,7 +11,7 @@ import { counterReducer } from './store/counter.reducer';
     //imports
     CommonModule,
     CounterRoutingModule,
-    StoreModule.forFeature('counterValue', counterReducer),
+    StoreModule.forFeature(CounterReducer.key, CounterReducer.reducer),
   ],
 })
 export class CounterModule {}
