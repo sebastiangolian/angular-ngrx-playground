@@ -24,11 +24,7 @@ export class CarComponent {
   }
 
   setCar() {
-    const car: Car = {
-      name: 'Skoda',
-      price: 7000,
-      isEnabled: true,
-    };
+    const car: Car = { name: 'Skoda', price: 7000, isEnabled: true };
     this.store.dispatch(CarActions.setCar({ car: car }));
   }
 
