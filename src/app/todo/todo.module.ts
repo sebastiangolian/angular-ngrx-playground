@@ -6,7 +6,7 @@ import { StoreModule } from '@ngrx/store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { environment } from 'src/environments/environment';
 import { TodoComponent } from './pages/todo/todo.component';
-import { TodoService } from './services/todo.service';
+import * as TodoReducer from './store/todo.reducer';
 import { TodoRoutingModule } from './todo-routing.module';
 
 @NgModule({
@@ -15,13 +15,12 @@ import { TodoRoutingModule } from './todo-routing.module';
     CommonModule,
     TodoRoutingModule,
     ReactiveFormsModule,
-    StoreModule.forRoot({}, {}),
+    StoreModule.forFeature(TodoReducer.key, TodoReducer.reducer),
     EffectsModule.forRoot([]),
     StoreDevtoolsModule.instrument({
       maxAge: 25,
       logOnly: environment.production,
     }),
   ],
-  providers: [TodoService],
 })
 export class TodoModule {}
