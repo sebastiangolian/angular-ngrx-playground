@@ -6,7 +6,10 @@
 </form>
 
 <div *ngFor="let todo of todos | async">
-    <button (click)="update(todo)">Update</button>
-    <p>{{ todo.title }}</p>
-    <button (click)="delete(todo)">Delete</button>
+    <p>
+        <span>{{ todo.title }}</span>
+        <span>({{ todo.completed }})</span>
+        <button (click)="update(todo)">Update</button>
+        <button (click)="delete(todo)">Delete</button>
+    </p>
 </div>

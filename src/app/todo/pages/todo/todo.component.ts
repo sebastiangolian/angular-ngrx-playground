@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { Observable } from 'rxjs';
+import { Store } from '@ngrx/store';
 import { Todo } from '../../interfaces/todo.interface';
+import { selectorAllTodos } from '../../store/todo.selector';
 
 @Component({
   selector: 'app-todo',
@@ -10,11 +11,12 @@ import { Todo } from '../../interfaces/todo.interface';
 })
 export class TodoComponent implements OnInit {
   public todoForm!: FormGroup;
-  public todos!: Observable<Todo[]>;
+  public todos!: any;
 
-  constructor(private formBuilder: FormBuilder) {}
+  constructor(private formBuilder: FormBuilder, private store: Store) {}
 
   ngOnInit(): void {
+    this.todos = this.store.select(selectorAllTodos);
     this.todoForm = this.formBuilder.group({
       title: ['', [Validators.required]],
     });
